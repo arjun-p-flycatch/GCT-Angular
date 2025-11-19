@@ -1,0 +1,25 @@
+<mat-label class="login-label">{{ label }}</mat-label>
+
+<mat-form-field appearance="outline" class="login-field" [class.error]="!!error">
+  <input
+    matInput
+    [placeholder]="placeholder"
+    [type]="type"
+    [disabled]="disabled"
+    [value]="value"
+    (input)="onInputChange($event)"
+    (blur)="onBlur()"
+  />
+  @if (suffixIcon) {
+  <button 
+    mat-icon-button 
+    matSuffix 
+    type="button" 
+    (click)="handleSuffixClick()">
+        <mat-icon>{{ suffixIcon }}</mat-icon>
+  </button>
+  }  
+</mat-form-field>
+@if (error) {
+  <div class="mat-error-message">{{ error }}</div>
+} 

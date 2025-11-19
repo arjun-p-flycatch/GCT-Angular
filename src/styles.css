@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=REM:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+}
+/* Reset all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primary-font:  "REM", sans-serif;
+  --secondary-font: 'Urbanist', sans-serif;
+  /* --custom-font: 'CustomFont', sans-serif; */
+
+  --primary-color : #F01F35;
+  --secondary-color : #FCFCFC;
+  --third-color: #000000;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

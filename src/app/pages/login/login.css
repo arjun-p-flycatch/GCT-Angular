@@ -1,0 +1,103 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 80px;
+  height: 100vh;
+  position: relative;
+  background-image: url("/images/login_bg.svg");
+  background-repeat: no-repeat; 
+  background-size: contain;
+  background-position: bottom;
+}
+
+.login-content {
+  display: flex;
+  flex-direction: column;  
+   align-items: center;
+  max-width: 464px;
+  width: 100%;
+  padding-bottom: 12rem;
+}
+
+.login-logo {
+ display: block;
+  margin: 0 auto 8px;
+ width: 52px;
+height: 52px;
+opacity: 1;
+}
+.login-content h5 {
+  font-family: var(--primary-font);
+  font-weight: 900;
+  font-style: Black; 
+  font-size: 20.85px;
+  color: var(--primary-color);
+  line-height: 23.46px;
+  letter-spacing: 0;
+  text-align: center;
+  margin: 0; 
+}
+.login-texts {
+  align-self: stretch;    
+  font-family: var(--primary-font);
+  max-width: 464px;
+  width: 100%;
+  padding: 0 ;
+  text-align: left; 
+  margin-top: 120px;
+}
+
+.login-title {
+  font-family: var(--secondary-font);
+font-weight: 400;
+font-size: 28px;
+line-height: 100%;
+color: var(--third-color);
+margin-bottom: 14px;
+}
+
+.login-subtitle {
+font-family: var(--secondary-font);
+font-weight: 400;
+font-size: 22px;
+line-height: 100%;
+margin-bottom: 36px;
+}
+
+.login-form {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+/* .login-button {
+  font-family: var(--secondary-font);
+  font-weight: 500;
+  font-style: Medium;
+  width: 100%;
+  font-size: 22px;
+  border-radius: 4px;
+  padding: 15px 0;
+  border: 0;
+  color:var(--secondary-color);
+  background-color: var(--primary-color);
+} */
+
+.login-background {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+@media (max-width: 992px) {
+  .login-content {
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-content {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,20 @@
+<button
+  class="app-button"
+  [ngClass]="[color]"
+  [disabled]="disabled || loading"
+  [attr.type]="type"
+>
+  <mat-progress-spinner
+    *ngIf="loading"
+    diameter="25"
+    mode="indeterminate"
+    color="accent"
+    class="spinner"
+  ></mat-progress-spinner>
+
+  <!-- Icon (optional) -->
+  <mat-icon *ngIf="icon && !loading" class="btn-icon">{{ icon }}</mat-icon>
+
+  <!-- Label -->
+  <span *ngIf="!loading">{{ label }}</span>
+</button>

@@ -1,0 +1,43 @@
+.app-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: 500;
+  font-family: var(--secondary-font);
+  transition: all 0.2s ease-in-out;
+  color: var(--secondary-color);
+  padding: 15px 20px; 
+  width: 100%;
+}
+
+.app-button:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.app-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spinner {
+  margin-right: 6px;
+}
+
+.btn-icon {
+  font-size: 20px;
+}
+
+.primary {
+  background-color: var(--primary-color);
+}
+
+.secondary {
+  background-color: var(--third-color);
+  color: white;
+}

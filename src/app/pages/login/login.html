@@ -1,0 +1,34 @@
+<div class="login-container">
+  <div class="login-content">
+    <img src="/images/logo.svg" alt="Logo" class="login-logo" />
+    <h5>Green Car Technology</h5>
+    <div class="login-texts">
+      <h2 class="login-title">Login</h2>
+      <p class="login-subtitle">Enter your login credentials</p>
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      <app-input 
+        label="Username" 
+        placeholder="Enter username" 
+        formControlName="username"
+        [error]="validateInput('username')">
+      </app-input>
+
+      <app-input
+        label="Password"
+        placeholder="xxxxxxxxxxxxxxxxxx"
+        [type]="hidePassword ? 'password' : 'text'"
+        [suffixIcon]="hidePassword ? 'visibility_off' : 'visibility'"
+        (suffixClick)="hidePassword = !hidePassword"
+        formControlName="password"
+        [error]="validateInput('password')">
+      </app-input>
+      <app-custom-button
+        label="Login"
+        type="submit"
+        color="primary"
+        [loading]="isLoading">
+      </app-custom-button>
+    </form>
+  </div>
+</div>
