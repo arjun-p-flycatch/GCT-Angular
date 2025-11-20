@@ -4,9 +4,13 @@
         <h5>Green Car Technology</h5>
     </div>
     <div class="sidebar-menu-items-container">
-        <div (click)="navigate(item.path[0])" *ngFor="let item of menuItems" class="sidebar-menu-items" [ngClass]="{'isActive':isActive(item)}">
-            <img [src]="isActive(item)? item.iconActive : item.icon"/>
+        @for (item of sideBarItems; track item) {
+        @if (userRole && item.allowedUser && item.allowedUser.includes(userRole)){
+        <div (click)="navigate(item.path[0])" class="sidebar-menu-items" [ngClass]="{'isActive':isActive(item)}">
+            <img [src]="isActive(item)? item.iconActive : item.icon" />
             <p>{{item.item}}</p>
         </div>
+        }
+        }
     </div>
 </div>

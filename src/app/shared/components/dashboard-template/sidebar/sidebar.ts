@@ -1,58 +1,26 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { sideBarItems } from '../../../../core/constants/menu-constants';
+import { AuthServices } from '../../../../core/services/authServices/auth-services';
 @Component({
   selector: 'app-sidebar',
   imports: [CommonModule],
   templateUrl: './sidebar.html',
-  styleUrl: './sidebar.css'
+  styleUrl: './sidebar.css',
 })
 export class Sidebar {
-  menuItems = [
-  {
-    item: "Dashboard",
-    icon: "/icons/dashboard-black.svg",
-    iconActive:"/icons/dashboard-white.svg",
-    path:["/dashboard","/profile-info"]
-  },
-   {
-    item: "Branches",
-    icon: "/icons/branches-black.svg",
-    iconActive:"/icons/branches-white.svg",
-    path:["/branches"]
-  },
-  {
-    item: "Staffs",
-    icon: "/icons/staff-black.svg",
-    iconActive:"/icons/staff-white.svg",
-    path:["/staffs"]
-  }, 
-  {
-    item: "Customers",
-    icon: "/icons/customers-black.svg",
-    iconActive:"/icons/customers-white.svg",
-    path:["/customers"]
-  },
-  {
-    item: "Bookings",
-    icon: "/icons/bookings-black.svg",
-    iconActive:"/icons/bookings-white.svg",
-    path:["/bookings"]
-  },
-  {
-    item: "Reports",
-    icon: "/icons/reports-black.svg",
-    iconActive:"/icons/reports-white.svg",
-    path:["/reports"]
-  },
-];
-  constructor(private router:Router){
+  sideBarItems = sideBarItems;
+  private authService = inject(AuthServices);
+  userRole: 'super_admin' | 'staff' | null = this.authService.getRole();;
+   
+  constructor(private router: Router) {}
 
+
+  isActive(sideBarItems: any): boolean {
+    return sideBarItems.path.includes(this.router.url);
   }
-  isActive(menuItem: any): boolean {
-    return menuItem.path.includes(this.router.url);
-  }
-  navigate(path:string):void{
-    this.router.navigate([path])
+  navigate(path: string): void {
+    this.router.navigate([path]);
   }
 }
