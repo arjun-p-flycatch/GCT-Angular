@@ -1,0 +1,34 @@
+<div class="dashboard-container">
+    <div class="heading-content">
+        <h5 class="greeting">Good Morning, Ryan Cole 👋</h5>
+        <div class="date-picker-container">
+            <app-custom-date-range-picker [startDate]="startDate" [endDate]="endDate"
+                placeholder="Select date range" (dateRangeChange)="onDateRangeChange($event)">
+            </app-custom-date-range-picker>
+        </div>
+    </div>
+    <div class="dashboard-heading-component-section">
+        <app-dashboard-heading-card
+            bg="linear-gradient(90deg, rgba(89, 188, 255, 0.2) 25.33%, rgba(202, 234, 255, 0.2) 100%)"
+            headingText="Booking Summary" icon="/icons/bookings-white.svg" iconBg="#59BCFF" textColor="#59BCFF">
+        </app-dashboard-heading-card>
+        <div class="dashboard-summary-card-section">
+            @for(item of dashBoardBookingCardDetails(); track item){
+            <app-booking-summary-card [bg]="item.bg" [count]="item.count" [countBG]="item.countBg"
+                [headingText]="item.headingText" [icon]="item.icon" [iconBg]="item.iconBg">
+            </app-booking-summary-card>
+            }
+        </div>
+        <app-dashboard-heading-card
+            bg="linear-gradient(90deg, rgba(34, 54, 87, 0.2) 25.33%, rgba(34, 54, 87, 0.04) 100%)"
+            headingText="Payment Summary" icon="/icons/card.svg" iconBg="#223657" textColor="#1E1E1ECC">
+        </app-dashboard-heading-card>
+        <div class="dashboard-summary-card-section">
+            @for(item of dashBoardPaymentCardDetails() ; track item){
+            <app-payment-summary-card [bg]="item.bg" [count]="item.Amount" [countBg]="item.countBg"
+                [headingText]="item.headingText" [iconBg]="item.iconBg"
+                [indecatorBg]="item.indicatorBg"></app-payment-summary-card>
+            }
+        </div>
+    </div>
+</div>
