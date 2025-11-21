@@ -1,0 +1,9 @@
+
+.custom-date-range-picker {
+  width: 100%;
+  max-width: 300px;
+}
+
+::ng-deep .custom-date-range-picker .mat-form-field-wrapper {
+  padding-bottom: 0;
+}

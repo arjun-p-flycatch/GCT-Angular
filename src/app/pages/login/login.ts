@@ -6,9 +6,9 @@ import {
   ReactiveFormsModule,
   FormControl,
 } from '@angular/forms';
-import { InputComponent } from '../../shared/components/dashboard-template/common-components/custom-input/custom-input';
+import { InputComponent } from '../../shared/components/common-components/custom-input/custom-input';
 import { CommonModule } from '@angular/common';
-import { ButtonComponent } from '../../shared/components/dashboard-template/common-components/custom-button/custom-button';
+import { ButtonComponent } from '../../shared/components/common-components/custom-button/custom-button';
 import { ValidationService } from '../../core/services/validationService/validation-service';
 import { LoginService, LoginRequest } from '../../core/services/loginService/login-service';
 
@@ -44,17 +44,15 @@ export class Login {
     console.log('Form submitted:', this.loginForm.value);
     const loginData: LoginRequest = {
       username: this.loginForm.value.username?.trim() || '',
-      password: this.loginForm.value.password || ''
+      password: this.loginForm.value.password || '',
     };
-    this.LoginService.login(loginData).subscribe(
-      {
-        next : (response) => {
-          if (response.status == 'success') {
-            console.log("login successful :" , response.message)
-          }
+    this.LoginService.login(loginData).subscribe({
+      next: (response) => {
+        if (response.status == 'success') {
+          console.log('login successful :', response.message);
         }
-      }
-    )
+      },
+    });
   }
 
   validateInput(controlName: string): string {

@@ -20,6 +20,7 @@
   height: 100vh;
   width: calc(100% - 264px);
   padding: 0 20px;
+  background: var(--container-bg);
 }
 .header-fixed {
   position: fixed;
@@ -34,5 +35,5 @@
   margin-top: 76px; 
   height: calc(100vh - 76px);
   overflow-y: auto;
-  background: #f9f9f9;
+  background: var(--container-bg);
 }

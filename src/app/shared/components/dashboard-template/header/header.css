@@ -1,5 +1,6 @@
 .header-container {
-  background-color:var(--secondary-color);
+  /* background-color:var(--secondary-color); */
+  background-color: var(--secondary-color);
   margin: 0;
   height: 76px;
 }

@@ -20,6 +20,7 @@ body {
   --primary-color : #F01F35;
   --secondary-color : #FCFCFC;
   --third-color: #000000;
+  --container-bg:#F5F5F5;
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
