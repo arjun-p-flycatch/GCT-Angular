@@ -1,1 +1,14 @@
-<p>booking-summary-card works!</p>
+<div [style.background]="bg()" class="summary-card-container">
+    <div class="summary-card-head">
+        <h5>{{headingText()}}</h5>
+        <h6>From Booking Summary</h6>
+    </div>
+    <div class="summary-card-count">
+        <div [style.background]="iconBg()" class="summary-icon-section">
+            <img src="/icons/calender-white.svg" alt="">
+        </div>
+        <div [style.background]="countBG()" class="summary-count-section">
+            {{count()}}
+        </div>
+    </div>
+</div>

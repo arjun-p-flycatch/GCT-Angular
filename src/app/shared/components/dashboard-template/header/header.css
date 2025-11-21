@@ -1,6 +1,6 @@
 .header-container {
-  /* background-color:var(--secondary-color); */
-  background-color: var(--secondary-color);
+  background-color:var(--secondary-color);
+  /* background-color: black; */
   margin: 0;
   height: 76px;
 }

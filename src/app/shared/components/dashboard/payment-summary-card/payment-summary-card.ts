@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-payment-summary-card',
@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './payment-summary-card.css'
 })
 export class PaymentSummaryCard {
-
+  headingText = input.required<string>();
+  iconBg = input.required<string>();
+  count = input.required<number>();
+  countBg = input.required<string>();
+  indecatorBg = input.required<string>();
+  bg = input.required<string>();
 }
